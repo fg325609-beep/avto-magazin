@@ -16,5 +16,8 @@ header .container .navbar {
   display: flex;
   align-items: center;
 }
+header .container .navbar img {
+  width: 100%;
+}
 
 /* yoki _main.scss ichida bo‘lsa, kerak emas *//*# sourceMappingURL=style.css.map */

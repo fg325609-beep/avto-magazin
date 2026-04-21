@@ -1,0 +1,92 @@
+main{
+    section{
+        .container{
+            .hero{
+
+                background-image: url(../img/hero.jpg);
+                height: 800px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                span{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                   a {
+                    cursor: e-resize;
+    display: inline-block; 
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 100%;
+    padding: 20px 35px;
+    border-radius: 50px;
+    border: 1px solid rgba(244, 196, 48, 1);
+    background: linear-gradient(251.96deg, rgba(0, 0, 0, 0.8) -20.95%, rgba(47, 47, 47, 0.8) 110.78%);
+    color: white;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1); 
+    overflow: hidden;
+
+    &:hover {
+        color: rgba(244, 196, 48, 1); 
+        border-color: white;
+        letter-spacing: 1px; 
+        box-shadow: 0 0 20px rgba(244, 196, 48, 0.4); 
+    }
+
+    // 2. Orqa fondagi "to'lqin" effekti
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(244, 196, 48, 1); // Sariq fon
+        transition: all 0.4s;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        left: 0; // Sariq fon chapdan surilib keladi
+    }
+
+    // 3. Hover holatida matn rangi o'zgarishi (fondan ajralib turishi uchun)
+    &:hover {
+        color: black; // Sariq fon ustida matn qora bo'lsa yaxshi o'qiladi
+    }
+
+    // 4. Bosilganda (Click) effekt
+    &:active {
+        transform: scale(0.95); // Tugma ichkariga botgandek bo'ladi
+    }
+}
+                h1{
+                    color: white;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    margin:0 auto;
+                    align-self: center;
+                    padding: 200px;
+                    font-weight: 700;
+                    font-style: Bold;
+                    font-size: 60px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    
+                }
+                i{
+                    display: flex;
+                    color: white;
+                    font-size: 50px;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+}

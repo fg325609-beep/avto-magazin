@@ -84,13 +84,12 @@ header{
         
     }
     &:hover::before {
-        content: "👀"; // Kursorni o'rniga emoji chiqadi
+        content: "👀"; 
         position: fixed;
         pointer-events: none;
         transform: translate(-50%, -50%);
         font-size: 30px;
         z-index: 9999;
-        // Bu qismi kursorni harakatlantirish uchun JS talab qiladi
     }
 
     &:active {

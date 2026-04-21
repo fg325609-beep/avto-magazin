@@ -186,6 +186,9 @@ main section .container .hero span i {
   opacity: 0.5;
 }
 
+section .container .section_one {
+  background: rgba(0, 0, 0, 0.7960784314);
+}
 section .container .section_one .top h1 {
   font-weight: 600;
   font-style: Semibold;
@@ -203,10 +206,47 @@ section .container .section_one .top p {
 section .container .section_one .left-righ-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 section .container .section_one .left-righ-wrapper .left {
   width: 50%;
+}
+section .container .section_one .left-righ-wrapper .left img {
+  width: 100%;
+}
+section .container .section_one .left-righ-wrapper .left {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+section .container .section_one .left-righ-wrapper .right {
+  width: 50%;
+  display: flex;
+}
+section .container .section_one .left-righ-wrapper .right ul h1 {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+section .container .section_one .left-righ-wrapper .right ul h1 span {
+  width: 30px;
+  border: 1px solid rgb(244, 196, 48);
+}
+section .container .section_one .left-righ-wrapper .right ul li {
+  font-weight: 400;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 0.68);
+}
+section .container .section_one .left-righ-wrapper .right ul {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }

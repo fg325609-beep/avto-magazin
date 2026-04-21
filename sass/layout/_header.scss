@@ -3,3 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin: 20px 0;
+}
+header{
+    .container{
+
+        .navbar{
+            display: flex;
+            align-items: center;
+        }
+    }
+}

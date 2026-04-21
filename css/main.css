@@ -185,3 +185,28 @@ main section .container .hero span i {
   font-size: 50px;
   opacity: 0.5;
 }
+
+section .container .section_one .top h1 {
+  font-weight: 600;
+  font-style: Semibold;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+section .container .section_one .top p {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0%;
+}
+section .container .section_one .left-righ-wrapper {
+  display: flex;
+  align-items: center;
+}
+section .container .section_one .left-righ-wrapper .left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

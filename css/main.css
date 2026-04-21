@@ -400,3 +400,26 @@ section .container .sect-theare .cards .card img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+section .container .sect-foo .title {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  color: white;
+  padding: 100px;
+}
+section .container .sect-foo .title h1 {
+  font-weight: 600;
+  font-style: Semibold;
+  font-size: 50px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+section .container .sect-foo .title p {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0%;
+  text-align: center;
+}

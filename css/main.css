@@ -13,6 +13,12 @@
   font-family: "Montserrat", sans-serif;
 }
 
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+}
 header .container .navbar {
   height: 105px;
   display: flex;

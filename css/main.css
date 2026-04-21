@@ -654,4 +654,12 @@ section .container .map iframe {
   height: 500px;
 }
 
-@im;
+footer .container .f-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+footer .container .f-footer img {
+  width: 100%;
+}

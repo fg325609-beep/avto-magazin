@@ -36,7 +36,6 @@ main{
         box-shadow: 0 0 20px rgba(244, 196, 48, 0.4); 
     }
 
-    // 2. Orqa fondagi "to'lqin" effekti
     &::before {
         content: '';
         position: absolute;
@@ -44,23 +43,21 @@ main{
         left: -100%;
         width: 100%;
         height: 100%;
-        background: rgba(244, 196, 48, 1); // Sariq fon
+        background: rgba(244, 196, 48, 1); 
         transition: all 0.4s;
         z-index: -1;
     }
 
     &:hover::before {
-        left: 0; // Sariq fon chapdan surilib keladi
+        left: 0; 
     }
 
-    // 3. Hover holatida matn rangi o'zgarishi (fondan ajralib turishi uchun)
     &:hover {
-        color: black; // Sariq fon ustida matn qora bo'lsa yaxshi o'qiladi
+        color: black; 
     }
 
-    // 4. Bosilganda (Click) effekt
     &:active {
-        transform: scale(0.95); // Tugma ichkariga botgandek bo'ladi
+        transform: scale(0.95); 
     }
 }
                 h1{

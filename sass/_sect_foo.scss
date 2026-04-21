@@ -25,6 +25,64 @@ section{
                     
                 }
             }
+            .wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .card{
+                    width: 32.5%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    img{
+                        width: 100%;
+                    }
+                    span{
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px;
+                        gap: 10px;
+                        li{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            h1{
+                                font-family: Gilroy;
+                                font-weight: 600;
+                                font-style: Semibold;
+                                font-size: 23px;
+                                line-height: 27px;
+                                letter-spacing: 0%;
+                                color: white;
+                                
+                            }
+                            p{
+                                font-family: Gilroy;
+                                font-weight: 400;
+                                font-style: Regular;
+                                font-size: 15px;
+                                line-height: 27px;
+                                letter-spacing: 0%;
+                                text-align: center;
+                                color: rgb(255, 253, 253);
+                                opacity: 0.5;
+                                
+                            }
+                        }
+                        .pp{
+                            font-family: Gilroy;
+                            font-weight: 500;
+                            font-style: Medium;
+                            font-size: 16px;
+                            line-height: 23px;
+                            letter-spacing: 0%;
+                            color: rgb(255, 255, 255);
+                            opacity: 0.5;
+                            
+                        }
+                    }
+                }
+            }
         }
     }
 }

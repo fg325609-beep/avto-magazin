@@ -386,3 +386,17 @@ section .container .sect-two .cards .card p {
 body {
   background: rgba(0, 0, 0, 0.8549019608);
 }
+
+section .container .sect-theare .cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section .container .sect-theare .cards .card {
+  width: 15%;
+}
+section .container .sect-theare .cards .card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

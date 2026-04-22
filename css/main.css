@@ -529,98 +529,185 @@ section .container .sect-two .cards .card a:hover {
     font-size: 28px;
   }
 }
+section .container .sect-theare {
+  padding: 50px 20px;
+}
 section .container .sect-theare .cards {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 section .container .sect-theare .cards .card {
   width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s;
 }
 section .container .sect-theare .cards .card img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+section .container .sect-theare .cards .card img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+section .container .sect-theare .cards .card:hover {
+  transform: scale(1.1);
 }
 
+/* ==================== MEDIA QUERIES ==================== */
+@media (max-width: 1024px) {
+  section .container .sect-theare .cards .card {
+    width: 20%;
+  }
+}
+@media (max-width: 768px) {
+  section .container .sect-theare .cards {
+    justify-content: center;
+    gap: 30px;
+  }
+  section .container .sect-theare .cards .card {
+    width: 28%;
+  }
+}
+@media (max-width: 480px) {
+  section .container .sect-theare .cards {
+    gap: 20px;
+  }
+  section .container .sect-theare .cards .card {
+    width: 42%;
+  }
+}
+section .container .sect-foo {
+  padding-bottom: 80px;
+}
 section .container .sect-foo .title {
   text-align: center;
   width: 70%;
   margin: 0 auto;
   color: white;
-  padding: 100px;
+  padding: 100px 20px;
 }
 section .container .sect-foo .title h1 {
   font-weight: 600;
-  font-style: Semibold;
   font-size: 50px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 section .container .sect-foo .title p {
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
   line-height: 27px;
-  letter-spacing: 0%;
-  text-align: center;
+  opacity: 0.8;
 }
 section .container .sect-foo .wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 0 20px;
 }
 section .container .sect-foo .wrapper .card {
-  width: 32.5%;
+  width: 31.5%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  transition: transform 0.3s ease;
+}
+section .container .sect-foo .wrapper .card:hover {
+  transform: translateY(-10px);
 }
 section .container .sect-foo .wrapper .card img {
   width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section .container .sect-foo .wrapper .card span {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  gap: 10px;
+  padding: 20px;
+  gap: 15px;
 }
 section .container .sect-foo .wrapper .card span li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  list-style: none;
 }
 section .container .sect-foo .wrapper .card span li h1 {
-  font-family: Gilroy;
+  font-family: "Gilroy", sans-serif;
   font-weight: 600;
-  font-style: Semibold;
   font-size: 23px;
-  line-height: 27px;
-  letter-spacing: 0%;
   color: white;
+  margin: 0;
 }
 section .container .sect-foo .wrapper .card span li p {
-  font-family: Gilroy;
+  font-family: "Gilroy", sans-serif;
   font-weight: 400;
-  font-style: Regular;
   font-size: 15px;
-  line-height: 27px;
-  letter-spacing: 0%;
-  text-align: center;
   color: rgb(255, 253, 253);
-  opacity: 0.5;
+  opacity: 0.6;
+  margin: 0;
 }
 section .container .sect-foo .wrapper .card span .pp {
-  font-family: Gilroy;
+  font-family: "Gilroy", sans-serif;
   font-weight: 500;
-  font-style: Medium;
   font-size: 16px;
   line-height: 23px;
-  letter-spacing: 0%;
-  color: rgb(255, 255, 255);
+  color: white;
   opacity: 0.5;
 }
 
+/* ==================== MEDIA QUERIES ==================== */
+@media (max-width: 1024px) {
+  section .container .sect-foo .title {
+    width: 90%;
+    padding: 60px 20px;
+  }
+  section .container .sect-foo .title h1 {
+    font-size: 40px;
+  }
+  section .container .sect-foo .wrapper .card {
+    width: 47%;
+  }
+}
+@media (max-width: 768px) {
+  section .container .sect-foo .title {
+    padding: 40px 15px;
+  }
+  section .container .sect-foo .title h1 {
+    font-size: 32px;
+  }
+  section .container .sect-foo .title p {
+    font-size: 14px;
+  }
+  section .container .sect-foo .wrapper {
+    justify-content: center;
+  }
+  section .container .sect-foo .wrapper .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+@media (max-width: 480px) {
+  section .container .sect-foo .title h1 {
+    font-size: 28px;
+  }
+  section .container .sect-foo .wrapper .card span li h1 {
+    font-size: 20px;
+  }
+}
 * {
   box-sizing: border-box;
 }

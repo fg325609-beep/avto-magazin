@@ -1,18 +1,69 @@
-section{
-    .container{
-        .sect-theare{
-            .cards{
+section {
+    .container {
+        .sect-theare {
+            padding: 50px 20px;
+
+            .cards {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                .card{
-                    width: 15%;
-                    img{
+                flex-wrap: wrap; // Elementlar sig'maganda pastga tushishi uchun
+                gap: 20px;
+
+                .card {
+                    width: 15%; // Kompyuterda 6 ta element atrofida
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: transform 0.3s ease, opacity 0.3s;
+
+                    img {
                         width: 100%;
-                        object-fit: cover;
+                        height: auto;
+                        object-fit: contain; // Rasm buzilmasligi uchun 'contain' yaxshiroq
+                        filter: grayscale(100%); // Logotiplar uchun estetik ko'rinish
+                        opacity: 0.6;
+
+                        &:hover {
+                            filter: grayscale(0%);
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
                     }
                 }
             }
+        }
+    }
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+@media (max-width: 1024px) {
+    section .container .sect-theare .cards .card {
+        width: 20%; // Planshetda 4 ta element bir qatorda
+    }
+}
+
+@media (max-width: 768px) {
+    section .container .sect-theare .cards {
+        justify-content: center; // Markazga tekislash
+        gap: 30px;
+
+        .card {
+            width: 28%; // Mobil qurilmalarda 3 ta element bir qatorda
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    section .container .sect-theare .cards {
+        gap: 20px;
+
+        .card {
+            width: 42%; // Kichik telefonlarda 2 tadan element
         }
     }
 }

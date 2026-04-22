@@ -6,7 +6,23 @@ footer{
             justify-content: center;
             flex-direction: column;
             img{
-                width: 100%;
+                width: 40%;
+            }
+            ul{
+                display: flex;
+                justify-content: space-between;
+                gap: 50px;
+                a{
+                    font-family: Gilroy;
+                    font-weight: 500;
+                    font-style: Medium;
+                    font-size: 20px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    color: white;
+                    opacity: 0.5;
+                    
+                }
             }
         }
     }

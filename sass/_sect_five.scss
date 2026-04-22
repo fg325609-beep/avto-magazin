@@ -4,151 +4,238 @@ $gold: #f5c542;
 $text: #fff;
 $muted: #aaa;
 
-* { box-sizing: border-box; }
-
 .contact {
     max-width: 1100px;
     margin: 40px auto;
     display: flex;
     background: $dark;
-    // border-radius: 24px;
     overflow: hidden;
-    // box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-    font-family: system-ui, sans-serif;
-}
+    font-family: system-ui, -apple-system, sans-serif;
+    border-radius: 12px; // Biroz yumshoqlik berish uchun
 
-.form-panel {
-    flex: 1;
-    padding: 60px 55px;
-    background: $panel;
-    color: $text;
-}
+    .form-panel {
+        flex: 1;
+        padding: 60px 55px;
+        background: $panel;
+        color: $text;
 
-.form-panel h1 {
-    font-size: 38px;
-    margin-bottom: 12px;
-}
+        h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
 
-.subtitle {
-    color: $muted;
-    line-height: 1.5;
-    margin-bottom: 45px;
-}
+        .subtitle {
+            color: $muted;
+            line-height: 1.5;
+            margin-bottom: 45px;
+            font-size: 16px;
+        }
 
-.input-group {
-    margin-bottom: 32px;
-}
+        .input-group {
+            margin-bottom: 32px;
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: $gold;
+            }
 
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #555;
-    padding: 10px 0;
-    font-size: 17px;
-    color: $text;
-}
+            input, textarea {
+                width: 100%;
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid #555;
+                padding: 10px 0;
+                font-size: 17px;
+                color: $text;
+                transition: border-color 0.3s;
 
-.input-group input:focus,
-.input-group textarea:focus {
-    outline: none;
-    border-color: $gold;
-}
+                &:focus {
+                    outline: none;
+                    border-color: $gold;
+                }
+            }
+        }
 
-.phone-wrapper {
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #555;
-    padding-bottom: 8px;
-    span { margin-right: 10px; font-weight: 600; }
-}
+        .phone-wrapper {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #555;
+            padding-bottom: 8px;
+            
+            span { 
+                margin-right: 10px; 
+                font-weight: 600; 
+                color: $muted;
+            }
 
-textarea { min-height: 130px; resize: vertical; }
+            input {
+                border-bottom: none;
+                padding: 0;
+            }
+        }
 
-/* ==================== ANIMATSIYALI TUGMA ==================== */
-.submit-btn {
-    margin-top: 15px;
-    padding: 16px 65px;
-    font-size: 18px;
-    font-weight: 600;
-    color: $gold;
-    background: transparent;
-    border: 2.5px solid $gold;
-    border-radius: 50px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
+        textarea { 
+            min-height: 130px; 
+            resize: vertical; 
+        }
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -75%;
-        width: 40%;
-        height: 300%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-        animation: shine 3s infinite;
+        .submit-btn {
+            margin-top: 15px;
+            padding: 16px 65px;
+            font-size: 18px;
+            font-weight: 600;
+            color: $gold;
+            background: transparent;
+            border: 2.5px solid $gold;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            width: fit-content;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -75%;
+                width: 40%;
+                height: 300%;
+                background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+                animation: shine 3s infinite;
+            }
+
+            &:hover {
+                background: $gold;
+                color: #121212;
+                transform: scale(1.05) translateY(-2px);
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
     }
 
-    &:hover {
-        background: $gold;
-        color: #121212;
-        transform: scale(1.08) translateY(-2px);
+    .info-panel {
+        width: 380px;
+        background: lighten($panel, 3%); // Biroz farq qilishi uchun
+        padding: 60px 40px;
+        color: $text;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+
+            .icon { 
+                font-size: 28px; 
+                color: $gold;
+            }
+
+            .details {
+                h3 {
+                    margin-bottom: 6px;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                p {
+                    color: $muted;
+                    margin: 0;
+                    line-height: 1.4;
+                }
+            }
+        }
+
+        .social {
+            margin-top: auto;
+            display: flex;
+            gap: 25px;
+            font-size: 28px;
+            
+            a { 
+                color: $text; 
+                transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+                
+                &:hover { 
+                    color: $gold; 
+                    transform: translateY(-5px) scale(1.2); 
+                }
+            }
+        }
     }
 }
 
-@keyframes shine {
-    0% { transform: translateX(-150%); }
-    100% { transform: translateX(300%); }
+/* ==================== MEDIA QUERIES ==================== */
+
+@media (max-width: 992px) {
+    .contact {
+        margin: 20px;
+        
+        .form-panel {
+            padding: 40px;
+        }
+        
+        .info-panel {
+            width: 320px;
+            padding: 40px 30px;
+        }
+    }
 }
 
-/* O'ng panel */
-.info-panel {
-    width: 380px;
-    background: #252525;
-    padding: 60px 40px;
-    color: $text;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.info-item {
-    display: flex;
-    gap: 16px;
-}
-
-.icon { font-size: 28px; }
-
-.info-item h3 {
-    margin-bottom: 6px;
-    font-size: 18px;
-}
-
-.info-item p {
-    color: $muted;
-    margin: 0;
-}
-
-.social {
-    margin-top: auto;
-    display: flex;
-    gap: 25px;
-    font-size: 32px;
-    a { color: $text; transition: 0.3s; }
-    a:hover { color: $gold; transform: scale(1.2); }
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-    .contact { flex-direction: column; }
-    .info-panel { width: 100%; }
+    .contact {
+        flex-direction: column;
+        margin: 15px;
+
+        .form-panel {
+            padding: 40px 25px;
+            
+            h1 { font-size: 32px; }
+            .subtitle { margin-bottom: 30px; }
+        }
+
+        .info-panel {
+            width: 100%;
+            padding: 40px 25px;
+            order: 2; // Formadan keyin tushishi uchun
+            gap: 30px;
+            
+            .social {
+                margin-top: 20px;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        .form-panel {
+            h1 { font-size: 28px; }
+            
+            .submit-btn {
+                width: 100%; // Mobil telefonda tugma to'liq kenglikda
+                padding: 14px 0;
+            }
+        }
+        
+        .info-panel {
+            .info-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    }
 }

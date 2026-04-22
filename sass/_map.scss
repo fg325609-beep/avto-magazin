@@ -1,11 +1,53 @@
-section{
-    .container{
-        .map{
+section {
+    .container {
+        .map {
             width: 100%;
-            iframe{
+            line-height: 0; // Iframe ostidagi bo'shliqni yo'qotish uchun
+            overflow: hidden;
+            border-radius: 12px; // Dizaynga mos yumshoqlik
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+
+            iframe {
                 width: 100%;
                 height: 500px;
+                border: 0; // Border xususiyatini iframe'ning o'zidan olib tashlash
+                filter: grayscale(100%) invert(92%) contrast(83%); // Dark mode dizayn uchun (ixtiyoriy)
+                transition: filter 0.3s ease;
+
+                &:hover {
+                    filter: grayscale(0%) invert(0%) contrast(100%);
+                }
             }
+        }
+    }
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+@media (max-width: 1024px) {
+    section .container .map {
+        iframe {
+            height: 400px; // Planshetlar uchun balandlik biroz kamaydi
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    section .container .map {
+        margin-top: 20px;
+        border-radius: 0; // Mobil qurilmada chekka-chekkasiz bo'lgani ma'qul
+        
+        iframe {
+            height: 350px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    section .container .map {
+        iframe {
+            height: 300px; // Kichik telefonlar uchun
         }
     }
 }

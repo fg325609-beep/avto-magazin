@@ -423,7 +423,6 @@ section .container .section_one .left-righ-wrapper .right ul li {
   text-align: right;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 @media (max-width: 1024px) {
   section .container .section_one .top {
     width: 80%;

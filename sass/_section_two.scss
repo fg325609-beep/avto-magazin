@@ -42,7 +42,7 @@ section {
                 padding: 0;
 
                 .card {
-                    width: 23%; // To'rtta karta uchun ideal
+                    width: 23%; 
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -53,11 +53,11 @@ section {
                     color: white;
 
                     &:last-child {
-                        border-right: none; // Oxirgi kartada chiziq bo'lmaydi
+                        border-right: none; 
                     }
 
                     span {
-                        .p-icon { // Class nomi aniqroq qilindi
+                        .p-icon { 
                             display: flex;
                             align-items: center;
                             justify-content: center;

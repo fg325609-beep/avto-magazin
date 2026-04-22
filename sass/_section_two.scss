@@ -14,7 +14,7 @@ section {
                 align-items: center;
                 flex-direction: column;
                 gap: 20px;
-                width: 60%; // Kichik ekranlar uchun moslashuvchanlik
+                width: 60%; 
                 margin: 0 auto 50px;
                 text-align: center;
                 color: white;
@@ -65,7 +65,7 @@ section {
                             height: 100px;
                             border-radius: 50%;
                             background: rgba(109, 109, 109, 0.3);
-                            // transform: rotate(90deg); // Agar kerak bo'lsa yoqing
+                            transform: rotate(180deg); 
                             
                             i {
                                 font-size: 45px;
@@ -100,8 +100,6 @@ section {
     }
 }
 
-/* ==================== MEDIA QUERIES ==================== */
-
 @media (max-width: 1200px) {
     section .container .sect-two .top {
         width: 80%;
@@ -110,11 +108,11 @@ section {
 
 @media (max-width: 992px) {
     section .container .sect-two .cards {
-        flex-wrap: wrap; // Kartalarni ikki qatorga o'tkazish
+        flex-wrap: wrap; 
         justify-content: center;
 
         .card {
-            width: 45%; // Ikki ustunli ko'rinish
+            width: 45%; 
             border-right: none;
             border-bottom: 1px solid rgba(77, 72, 72, 0.5);
             
@@ -134,7 +132,7 @@ section {
 
         .cards {
             .card {
-                width: 100%; // Bir ustunli ko'rinish
+                width: 100%; 
                 padding: 30px 0;
                 
                 &:last-child {

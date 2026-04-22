@@ -111,7 +111,6 @@ header {
     }
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 
 @media (max-width: 1024px) {
     header .container .navbar {
@@ -126,7 +125,7 @@ header {
         height: 80px;
         
         ul {
-            display: none; // Planshet/Telefonda menyuni yashirish (Gamburger menyu uchun)
+            display: none; 
         }
         
         .nav-btn {
@@ -153,11 +152,10 @@ header {
         }
 
         .nav-btn {
-            display: none; // Juda kichik ekranda tugmani yashirish yoki kichraytirish
+            display: none; 
         }
     }
 }
-/* Gamburger tugmasi stili (Desktopda ko'rinmaydi) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -174,37 +172,35 @@ header {
     }
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 
 @media (max-width: 900px) {
     .hamburger {
         display: flex;
         position: relative;
-        z-index: 1101; // Tugma hamma narsadan ustun tursin
+        z-index: 1101; 
     }
 
     header .container .navbar {
         .nav-menu {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; // Linklarni tepadan boshlab chiqish
+            justify-content: flex-start; 
             padding-top: 100px; 
             align-items: center;
             
-            // Modal (O'ng tarafdagi kichikroq panel)
             position: fixed;
             top: 0;
             right: -100%; 
-            width: 300px;  // Kengligi cheklandi
+            width: 300px; 
             height: 100vh;
-            background: #1a1a1a; // To'qroq rang
+            background: #1a1a1a;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
             transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 25px;
             z-index: 1100;
 
             &.active {
-                right: 0; // Ochiq holati
+                right: 0; 
             }
 
             a {
@@ -216,7 +212,6 @@ header {
         }
     }
 
-    // Orqa fonni qorong'ulashtirish uchun (Overlay)
     .menu-overlay {
         display: none;
         position: fixed;
@@ -225,7 +220,7 @@ header {
         width: 100%;
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 1050; // Menyudan bir pog'ona pastda
+        z-index: 1050; 
 
         &.active {
             display: block;

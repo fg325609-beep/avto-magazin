@@ -93,7 +93,6 @@ header .container .navbar .nav-btn:hover::after {
   transition: all 0.6s ease-in-out;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 @media (max-width: 1024px) {
   header .container .navbar img {
     width: 200px;
@@ -134,7 +133,6 @@ header .container .navbar .nav-btn:hover::after {
     display: none;
   }
 }
-/* Gamburger tugmasi stili (Desktopda ko'rinmaydi) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -150,7 +148,6 @@ header .container .navbar .nav-btn:hover::after {
   transition: 0.3s;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 @media (max-width: 900px) {
   .hamburger {
     display: flex;
@@ -541,6 +538,7 @@ section .container .sect-two .cards .card span .p-icon {
   height: 100px;
   border-radius: 50%;
   background: rgba(109, 109, 109, 0.3);
+  transform: rotate(180deg);
 }
 section .container .sect-two .cards .card span .p-icon i {
   font-size: 45px;
@@ -565,7 +563,6 @@ section .container .sect-two .cards .card a:hover {
   text-decoration: underline;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 @media (max-width: 1200px) {
   section .container .sect-two .top {
     width: 80%;

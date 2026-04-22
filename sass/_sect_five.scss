@@ -11,7 +11,7 @@ $muted: #aaa;
     background: $dark;
     overflow: hidden;
     font-family: system-ui, -apple-system, sans-serif;
-    border-radius: 12px; // Biroz yumshoqlik berish uchun
+    border-radius: 12px; 
 
     .form-panel {
         flex: 1;
@@ -125,7 +125,7 @@ $muted: #aaa;
 
     .info-panel {
         width: 380px;
-        background: lighten($panel, 3%); // Biroz farq qilishi uchun
+        background: lighten($panel, 3%); 
         padding: 60px 40px;
         color: $text;
         display: flex;
@@ -175,7 +175,6 @@ $muted: #aaa;
     }
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 
 @media (max-width: 992px) {
     .contact {
@@ -207,7 +206,7 @@ $muted: #aaa;
         .info-panel {
             width: 100%;
             padding: 40px 25px;
-            order: 2; // Formadan keyin tushishi uchun
+            order: 2; 
             gap: 30px;
             
             .social {
@@ -224,7 +223,7 @@ $muted: #aaa;
             h1 { font-size: 28px; }
             
             .submit-btn {
-                width: 100%; // Mobil telefonda tugma to'liq kenglikda
+                width: 100%; 
                 padding: 14px 0;
             }
         }

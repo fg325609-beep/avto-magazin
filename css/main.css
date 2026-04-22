@@ -637,7 +637,6 @@ section .container .sect-theare .cards .card:hover {
   transform: scale(1.1);
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 @media (max-width: 1024px) {
   section .container .sect-theare .cards .card {
     width: 20%;

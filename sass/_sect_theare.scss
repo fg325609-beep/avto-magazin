@@ -11,7 +11,7 @@ section {
                 gap: 30px;
 
                 .card {
-                    width: 15%; // Kompyuterda 6 ta element atrofida
+                    width: 15%; 
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -21,8 +21,7 @@ section {
                     img {
                         width: 100%;
                         height: auto;
-                        object-fit: contain; // Rasm buzilmasligi uchun 'contain' yaxshiroq
-                        // filter: grayscale(100%); // Logotiplar uchun estetik ko'rinish
+                        object-fit: contain; 
                         opacity: 0.6;
 
                         &:hover {
@@ -40,21 +39,20 @@ section {
     }
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 
 @media (max-width: 1024px) {
     section .container .sect-theare .cards .card {
-        width: 20%; // Planshetda 4 ta element bir qatorda
+        width: 20%;
     }
 }
 
 @media (max-width: 768px) {
     section .container .sect-theare .cards {
-        justify-content: center; // Markazga tekislash
+        justify-content: center; 
         gap: 30px;
 
         .card {
-            width: 28%; // Mobil qurilmalarda 3 ta element bir qatorda
+            width: 28%; 
         }
     }
 }
@@ -64,7 +62,7 @@ section {
         gap: 20px;
 
         .card {
-            width: 42%; // Kichik telefonlarda 2 tadan element
+            width: 42%; 
         }
     }
 }

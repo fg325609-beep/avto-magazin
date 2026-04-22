@@ -7,21 +7,22 @@ section {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                flex-wrap: wrap; // Elementlar sig'maganda pastga tushishi uchun
                 gap: 20px;
+                gap: 30px;
 
                 .card {
                     width: 15%; // Kompyuterda 6 ta element atrofida
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    transition: transform 0.3s ease, opacity 0.3s;
-
+                    flex-direction: column;
+                    gap: 20px ;
+                    
                     img {
                         width: 100%;
                         height: auto;
                         object-fit: contain; // Rasm buzilmasligi uchun 'contain' yaxshiroq
-                        filter: grayscale(100%); // Logotiplar uchun estetik ko'rinish
+                        // filter: grayscale(100%); // Logotiplar uchun estetik ko'rinish
                         opacity: 0.6;
 
                         &:hover {

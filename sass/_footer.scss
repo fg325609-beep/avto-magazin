@@ -1,29 +1,83 @@
-footer{
-    .container{
-        .f-footer{
+footer {
+    background: #000; // Odatda footer foni to'q rangda bo'ladi
+    padding: 60px 0;
+
+    .container {
+        .f-footer {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            img{
-                width: 40%;
+            gap: 40px; // Elementlar orasidagi masofa
+
+            img {
+                width: 200px; // Logo o'lchamini aniqroq belgilash ma'qul
+                height: auto;
+                object-fit: contain;
             }
-            ul{
+
+            ul {
                 display: flex;
-                justify-content: space-between;
+                align-items: center;
+                justify-content: center;
+                list-style: none;
+                padding: 0;
+                margin: 0;
                 gap: 50px;
-                a{
-                    font-family: Gilroy;
+                flex-wrap: wrap; // Elementlar sig'masa pastga tushadi
+
+                a {
+                    font-family: 'Gilroy', sans-serif;
                     font-weight: 500;
-                    font-style: Medium;
                     font-size: 20px;
-                    line-height: 100%;
-                    letter-spacing: 0%;
+                    text-decoration: none;
                     color: white;
                     opacity: 0.5;
-                    
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        opacity: 1;
+                        color: rgba(244, 196, 48, 1); // Oltin rang hover effekti
+                    }
                 }
             }
+        }
+    }
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+@media (max-width: 1024px) {
+    footer .container .f-footer {
+        ul {
+            gap: 35px; // Planshetda oraliq masofani kamaytirish
+            a { font-size: 18px; }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    footer .container .f-footer {
+        gap: 30px;
+
+        img {
+            width: 150px; // Logo biroz kichraytirildi
+        }
+
+        ul {
+            flex-direction: column; // Mobil qurilmada menu ustma-ust tushadi
+            gap: 20px;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 40px 0;
+        
+        .f-footer ul a {
+            font-size: 16px; // Kichik telefonlar uchun matn hajmi
         }
     }
 }

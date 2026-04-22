@@ -5,6 +5,13 @@ header {
   left: 0;
   z-index: 1000;
 }
+header * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
 header .container .navbar {
   height: 105px;
   display: flex;
@@ -536,22 +543,22 @@ section .container .sect-theare .cards {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 20px;
+  gap: 30px;
 }
 section .container .sect-theare .cards .card {
   width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, opacity 0.3s;
+  flex-direction: column;
+  gap: 20px;
 }
 section .container .sect-theare .cards .card img {
   width: 100%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: grayscale(100%);
   opacity: 0.6;
 }
 section .container .sect-theare .cards .card img:hover {
@@ -948,27 +955,74 @@ section .container .map iframe:hover {
     height: 300px;
   }
 }
+footer {
+  background: #000;
+  padding: 60px 0;
+}
 footer .container .f-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 40px;
 }
 footer .container .f-footer img {
-  width: 40%;
+  width: 200px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 footer .container .f-footer ul {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   gap: 50px;
+  flex-wrap: wrap;
 }
 footer .container .f-footer ul a {
-  font-family: Gilroy;
+  font-family: "Gilroy", sans-serif;
   font-weight: 500;
-  font-style: Medium;
   font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  text-decoration: none;
   color: white;
   opacity: 0.5;
+  transition: all 0.3s ease;
+}
+footer .container .f-footer ul a:hover {
+  opacity: 1;
+  color: rgb(244, 196, 48);
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+@media (max-width: 1024px) {
+  footer .container .f-footer ul {
+    gap: 35px;
+  }
+  footer .container .f-footer ul a {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  footer .container .f-footer {
+    gap: 30px;
+  }
+  footer .container .f-footer img {
+    width: 150px;
+  }
+  footer .container .f-footer ul {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    padding: 40px 0;
+  }
+  footer .f-footer ul a {
+    font-size: 16px;
+  }
 }

@@ -2,10 +2,10 @@ section {
     .container {
         .section_one {
             background: #000000da;
-            padding: 60px 0; // Bo'limga nafas berish uchun
+            padding: 60px 0;
 
             .top {
-                width: 60%; // Kenglik biroz oshirildi
+                width: 60%; 
                 color: white;
                 padding-left: 60px;
                 display: flex;
@@ -61,7 +61,7 @@ section {
                             align-items: center;
                             justify-content: center;
                             background: white;
-                            transform: rotate(45deg); // 60 dan 45 ga o'zgartirildi (standart romb)
+                            transform: rotate(45deg); 
 
                             p {
                                 transform: rotate(-45deg);

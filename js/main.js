@@ -1,3 +1,4 @@
+AOS.init();
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const overlay = document.getElementById('overlay');
@@ -23,4 +24,3 @@ overlay.addEventListener('click', toggleMenu);
 
 // Linklar bosilganda yopilishi
 document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', toggleMenu));
-  AOS.init();

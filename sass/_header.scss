@@ -1,159 +1,65 @@
-$gold-border: rgba(244, 196, 48, 1);
-$nav-bg: rgba(0, 0, 0, 0.5);
+/* ... (avvalgi kodlar o'zgarishsiz qoladi) ... */
 
-header {
-    position: fixed;
-    right: 0;
-    top: 0;
-    left: 0;
-    z-index: 1000; 
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        list-style: none;
-        text-decoration: none;
-    }
+// Gamburger tugmasi (faqat mobil uchun)
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
 
-    .container {
-        .navbar {
-            height: 105px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: $nav-bg;
-            padding: 0 20px;
-            transition: 0.3s ease;
-
-            img {
-                width: 250px; 
-                height: auto;
-            }
-
-            ul {
-                display: flex;
-                align-items: center;
-                gap: 25px;
-
-                a {
-                    font-family: 'Gilroy', sans-serif;
-                    font-weight: 500;
-                    font-size: 18px;
-                    color: white;
-                    transition: 0.3s;
-
-
-                    &:hover {
-                        color: $gold-border;
-                    }
-                }
-            }
-
-            span {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-
-                select {
-                    background: transparent;
-                    color: white;
-                    border: 1px solid rgba(255, 255, 255, 0.3);
-                    padding: 5px;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    outline: none;
-
-                    option {
-                        background-color: #333;
-                        color: white;
-                    }
-                }
-            }
-
-            .nav-btn {
-                padding: 15px 35px;
-                background: linear-gradient(251.96deg, #000000 -20.95%, #2F2F2F 110.78%);
-                font-weight: 500;
-                font-size: 16px;
-                border: 1px solid $gold-border;
-                border-radius: 50px;
-                color: white;
-                cursor: pointer;
-                position: relative;
-                overflow: hidden;
-                transition: all 0.3s ease-in-out;
-                display: inline-block;
-
-                &:hover {
-                    transform: translateY(-3px);
-                    box-shadow: 0 10px 20px rgba(244, 196, 48, 0.3);
-                    border-color: white;
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: -50%;
-                    left: -60%;
-                    width: 20%;
-                    height: 200%;
-                    background: rgba(255, 255, 255, 0.2);
-                    transform: rotate(30deg);
-                    transition: none;
-                }
-
-                &:hover::after {
-                    left: 120%;
-                    transition: all 0.6s ease-in-out;
-                }
-            }
-        }
+    span {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s;
     }
 }
 
 /* ==================== MEDIA QUERIES ==================== */
 
-@media (max-width: 1024px) {
-    header .container .navbar {
-        img { width: 200px; }
-        ul { gap: 15px; }
-        ul a { font-size: 16px; }
-    }
-}
-
 @media (max-width: 900px) {
     header .container .navbar {
         height: 80px;
-        
+
+        .menu-toggle {
+            display: flex; // Mobil qurilmada ko'rinsin
+        }
+
+        // Modal menyu (Ekranni to'liq qoplaydi)
         ul {
-            display: none; // Planshet/Telefonda menyuni yashirish (Gamburger menyu uchun)
-        }
-        
-        .nav-btn {
-            padding: 10px 20px;
-            font-size: 14px;
-        }
-    }
-}
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: -100%; // Dastlab ekrandan tashqarida
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.95);
+            transition: 0.4s ease-in-out;
+            z-index: 1000;
+            gap: 40px;
 
-@media (max-width: 600px) {
-    header .container .navbar {
-        padding: 0 15px;
-        
-        img {
-            width: 150px;
-        }
+            &.active {
+                right: 0; // Menyu ochilganda
+            }
 
-        span {
-            gap: 8px;
-            
-            select {
-                font-size: 12px;
+            a {
+                font-size: 24px; // Modalda kattaroq shrift
             }
         }
+        
+        // Modal ochiqligida gamburger animatsiyasi (X shakli)
+        &.open {
+            .menu-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .menu-toggle span:nth-child(2) { opacity: 0; }
+            .menu-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
 
         .nav-btn {
-            display: none; // Juda kichik ekranda tugmani yashirish yoki kichraytirish
+            display: none; // Mobil qurilmada tugmani menyu ichiga olsa ham bo'ladi
         }
     }
 }

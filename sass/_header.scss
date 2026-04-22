@@ -178,51 +178,57 @@ header {
 
 @media (max-width: 900px) {
     .hamburger {
-        display: flex; // Mobil qurilmada ko'rinsin
+        display: flex;
+        position: relative;
+        z-index: 1101; // Tugma hamma narsadan ustun tursin
     }
 
     header .container .navbar {
-        height: 80px;
-
         .nav-menu {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; // Linklarni tepadan boshlab chiqish
+            padding-top: 100px; 
             align-items: center;
             
-            // Modal ko'rinishi
+            // Modal (O'ng tarafdagi kichikroq panel)
             position: fixed;
             top: 0;
-            right: -100%; // Dastlab yashirin
-            width: 100%;
+            right: -100%; 
+            width: 300px;  // Kengligi cheklandi
             height: 100vh;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            transition: 0.4s ease-in-out;
-            gap: 30px;
-            z-index: 1050;
+            background: #1a1a1a; // To'qroq rang
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 25px;
+            z-index: 1100;
 
             &.active {
-                right: 0; // Bosilganda chiqadi
+                right: 0; // Ochiq holati
             }
 
             a {
-                font-size: 24px;
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
             }
         }
     }
 
-    // Gamburger "X" ga aylanishi
-    .hamburger.active {
-        span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-        span:nth-child(2) { opacity: 0; }
-        span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    }
-}
+    // Orqa fonni qorong'ulashtirish uchun (Overlay)
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050; // Menyudan bir pog'ona pastda
 
-@media (max-width: 600px) {
-    header .container .navbar {
-        img { width: 150px; }
-        .nav-btn { display: none; } // Kichik ekranda tugmani yashirish
+        &.active {
+            display: block;
+        }
     }
 }

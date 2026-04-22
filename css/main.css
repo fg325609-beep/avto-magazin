@@ -154,48 +154,47 @@ header .container .navbar .nav-btn:hover::after {
 @media (max-width: 900px) {
   .hamburger {
     display: flex;
-  }
-  header .container .navbar {
-    height: 80px;
+    position: relative;
+    z-index: 1101;
   }
   header .container .navbar .nav-menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 100px;
     align-items: center;
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
+    width: 300px;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    transition: 0.4s ease-in-out;
-    gap: 30px;
-    z-index: 1050;
+    background: #1a1a1a;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 25px;
+    z-index: 1100;
   }
   header .container .navbar .nav-menu.active {
     right: 0;
   }
   header .container .navbar .nav-menu a {
-    font-size: 24px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
   }
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-}
-@media (max-width: 600px) {
-  header .container .navbar img {
-    width: 150px;
-  }
-  header .container .navbar .nav-btn {
+  .menu-overlay {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+  }
+  .menu-overlay.active {
+    display: block;
   }
 }
 main section .container .hero {

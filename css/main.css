@@ -134,6 +134,70 @@ header .container .navbar .nav-btn:hover::after {
     display: none;
   }
 }
+/* Gamburger tugmasi stili (Desktopda ko'rinmaydi) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+  header .container .navbar {
+    height: 80px;
+  }
+  header .container .navbar .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    transition: 0.4s ease-in-out;
+    gap: 30px;
+    z-index: 1050;
+  }
+  header .container .navbar .nav-menu.active {
+    right: 0;
+  }
+  header .container .navbar .nav-menu a {
+    font-size: 24px;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+@media (max-width: 600px) {
+  header .container .navbar img {
+    width: 150px;
+  }
+  header .container .navbar .nav-btn {
+    display: none;
+  }
+}
 main section .container .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/hero.jpg);
   background-size: cover;
@@ -366,40 +430,47 @@ section .container .section_one .left-righ-wrapper .right ul li {
     width: 80%;
     padding-left: 40px;
   }
+  section .container .section_one .top .p {
+    width: 100%;
+    text-align: center;
+  }
   section .container .section_one .left-righ-wrapper {
     padding: 0 40px;
   }
 }
 @media (max-width: 768px) {
-  section .container .section_one .top {
+  .left section .container .section_one .top {
     width: 100%;
     padding: 0 20px;
     text-align: center;
     align-items: center;
   }
-  section .container .section_one .top h1 {
+  .left section .container .section_one .top h1 {
     font-size: 32px;
   }
-  section .container .section_one .left-righ-wrapper {
+  .left section .container .section_one .left-righ-wrapper {
     flex-direction: column;
     align-items: center;
     padding: 0 20px;
   }
-  section .container .section_one .left-righ-wrapper .left, section .container .section_one .left-righ-wrapper .right {
+  .left section .container .section_one .left-righ-wrapper .left, .left section .container .section_one .left-righ-wrapper .right {
     width: 100%;
     align-items: center;
   }
-  section .container .section_one .left-righ-wrapper .right ul {
+  .left section .container .section_one .left-righ-wrapper .right ul {
     align-items: center;
   }
-  section .container .section_one .left-righ-wrapper .right ul h1 {
+  .left section .container .section_one .left-righ-wrapper .right ul h1 {
     justify-content: center;
   }
-  section .container .section_one .left-righ-wrapper .right ul li {
+  .left section .container .section_one .left-righ-wrapper .right ul li {
     text-align: center;
   }
+  .left section .container .section_one .left-righ-wrapper .right ul li .p {
+    width: 100%;
+  }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) and (max-width: 480px) {
   section .container .section_one .top h1 {
     font-size: 26px;
   }
@@ -408,7 +479,7 @@ section .container .section_one .left-righ-wrapper .right ul li {
     gap: 15px;
   }
   section .container .section_one .left span .p {
-    font-size: 18px;
+    font-size: 10px;
     text-align: center;
   }
 }
@@ -521,7 +592,7 @@ section .container .sect-two .cards .card a:hover {
     width: 100%;
   }
   section .container .sect-two .top h1 {
-    font-size: 35px;
+    font-size: 20px;
   }
   section .container .sect-two .cards .card {
     width: 100%;
@@ -533,7 +604,10 @@ section .container .sect-two .cards .card a:hover {
 }
 @media (max-width: 480px) {
   section .container .sect-two .top h1 {
-    font-size: 28px;
+    font-size: 15px;
+  }
+  section .container .sect-two .top h1 p {
+    font-size: 10px;
   }
 }
 section .container .sect-theare {

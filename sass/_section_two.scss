@@ -129,7 +129,7 @@ section {
     section .container .sect-two {
         .top {
             width: 100%;
-            h1 { font-size: 35px; }
+            h1 { font-size: 20px; }
         }
 
         .cards {
@@ -147,6 +147,10 @@ section {
 
 @media (max-width: 480px) {
     section .container .sect-two .top h1 {
-        font-size: 28px;
+        font-size: 15px;
+        p{
+        font-size: 10px;
+
+        }
     }
 }

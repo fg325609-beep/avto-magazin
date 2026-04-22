@@ -1,9 +1,21 @@
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('nav-links');
-const navbar = document.getElementById('navbar');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // Menyuni ko'rsatish
-    navbar.classList.toggle('open');     // Gamburgerni 'X' ga aylantirish
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto'; // Skrollni to'xtatish
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    
+    // Menyu ochiqligida orqa fon skroll bo'lmasligi uchun:
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 });
+
+// Link bosilganda menyu yopilishi uchun
+document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}));

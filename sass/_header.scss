@@ -157,3 +157,72 @@ header {
         }
     }
 }
+/* Gamburger tugmasi stili (Desktopda ko'rinmaydi) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
+
+    span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s;
+    }
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex; // Mobil qurilmada ko'rinsin
+    }
+
+    header .container .navbar {
+        height: 80px;
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            // Modal ko'rinishi
+            position: fixed;
+            top: 0;
+            right: -100%; // Dastlab yashirin
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            transition: 0.4s ease-in-out;
+            gap: 30px;
+            z-index: 1050;
+
+            &.active {
+                right: 0; // Bosilganda chiqadi
+            }
+
+            a {
+                font-size: 24px;
+            }
+        }
+    }
+
+    // Gamburger "X" ga aylanishi
+    .hamburger.active {
+        span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        span:nth-child(2) { opacity: 0; }
+        span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
+}
+
+@media (max-width: 600px) {
+    header .container .navbar {
+        img { width: 150px; }
+        .nav-btn { display: none; } // Kichik ekranda tugmani yashirish
+    }
+}

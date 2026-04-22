@@ -8,7 +8,7 @@ section {
                 width: 70%;
                 margin: 0 auto;
                 color: white;
-                padding: 100px 20px; // Padding yon tomonlama ham berildi
+                padding: 100px 20px; 
 
                 h1 {
                     font-weight: 600;
@@ -29,13 +29,13 @@ section {
                 display: flex;
                 align-items: flex-start;
                 justify-content: space-between;
-                flex-wrap: wrap; // Kartalar sig'masa pastga tushadi
+                flex-wrap: wrap; 
                 gap: 25px;
                 padding: 0 20px;
 
                 .card {
-                    width: 31.5%; // 3 ta karta uchun
-                    background: rgba(255, 255, 255, 0.05); // Yengil fon
+                    width: 31.5%; 
+                    background: rgba(255, 255, 255, 0.05); 
                     border-radius: 15px;
                     overflow: hidden;
                     display: flex;
@@ -97,7 +97,6 @@ section {
     }
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 
 @media (max-width: 1024px) {
     section .container .sect-foo {
@@ -108,7 +107,7 @@ section {
         }
         
         .wrapper .card {
-            width: 47%; // Planshetda 2 tadan karta
+            width: 47%;
         }
     }
 }
@@ -124,7 +123,7 @@ section {
         .wrapper {
             justify-content: center;
             .card {
-                width: 100%; // Mobil qurilmada 1 tadan karta
+                width: 100%;
                 max-width: 400px;
             }
         }

@@ -744,7 +744,6 @@ section .container .sect-foo .wrapper .card span .pp {
   opacity: 0.5;
 }
 
-/* ==================== MEDIA QUERIES ==================== */
 @media (max-width: 1024px) {
   section .container .sect-foo .title {
     width: 90%;

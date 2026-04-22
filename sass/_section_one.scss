@@ -1,114 +1,179 @@
-section{
-    .container{
-        .section_one{
+section {
+    .container {
+        .section_one {
             background: #000000da;
-            .top{
-                width: 40%;
+            padding: 60px 0; // Bo'limga nafas berish uchun
+
+            .top {
+                width: 60%; // Kenglik biroz oshirildi
                 color: white;
                 padding-left: 60px;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                margin-bottom: 40px;
 
-                h1{
-                  font-weight: 600;
-                  font-style: Semibold;
-                  font-size: 40px;
-                  line-height: 100%;
-                  letter-spacing: 0%;
-                margin: 0;
+                h1 {
+                    font-weight: 600;
+                    font-size: 40px;
+                    line-height: 1.1;
+                    margin: 0;
                 }
-                p{
-                    font-family: Gilroy;
+
+                p {
+                    font-family: 'Gilroy', sans-serif;
                     font-weight: 500;
-                    font-style: Medium;
                     font-size: 16px;
                     line-height: 23px;
-                    letter-spacing: 0%;
-                    
-                    
+                    opacity: 0.8;
                 }
             }
-            .left-righ-wrapper{
+
+            .left-righ-wrapper {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: space-between;
-                .left{
+                padding: 0 60px;
+                gap: 40px;
+
+                .left {
                     width: 50%;
-                    img{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+
+                    img {
                         width: 100%;
+                        height: auto;
+                        margin-bottom: 30px;
                     }
-                    span{
+
+                    span {
                         display: flex;
                         align-items: center;
                         gap: 30px;
                         padding-bottom: 50px;
-                        li{
-                            width: 50px;
-                            height: 50px;
+
+                        li {
+                            width: 60px;
+                            height: 60px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             background: white;
-                            font-size: 60px;
-                            transform: rotate(60deg);
-                            p{
-                                transform: rotate(-60deg);
-                            }
-                            }
-                            .p{
-                                color: white;
-                                font-weight: 500;
-                                font-style: Medium;
-                                font-size: 20px;
-                                leading-trim: NONE;
-                                line-height: 100%;
-                                letter-spacing: 0%;
-                                
-                            }
+                            transform: rotate(45deg); // 60 dan 45 ga o'zgartirildi (standart romb)
 
-                    }
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                }
-                .right{
-                    width: 50%;
-                    display: flex;
-                    ul{
-                        h1{
-                            font-weight: 700;
-                            font-style: Bold;
-                            font-size: 30px;
+                            p {
+                                transform: rotate(-45deg);
+                                font-size: 24px;
+                                margin: 0;
+                                color: black;
+                            }
+                        }
+
+                        .p {
+                            color: white;
+                            font-weight: 500;
+                            font-size: 20px;
                             line-height: 100%;
-                            letter-spacing: 0%;
+                        }
+                    }
+                }
+
+                .right {
+                    width: 45%;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        gap: 25px;
+                        list-style: none;
+
+                        h1 {
+                            font-weight: 700;
+                            font-size: 30px;
                             display: flex;
                             align-items: center;
                             gap: 10px;
                             color: white;
-                            span{
+
+                            span {
                                 width: 30px;
-                                border: 1px solid rgba(244, 196, 48, 1)
+                                height: 0;
+                                border: 1px solid rgba(244, 196, 48, 1);
                             }
                         }
-                        li{
-                           font-weight: 400;
-                           font-style: Medium;
-                           font-size: 20px;
-                           line-height: 100%;
-                           letter-spacing: 0%;
-                        //    opacity: 0.5;
-                           color: rgba(255, 255, 255, 0.68);
-                           
+
+                        li {
+                            font-weight: 400;
+                            font-size: 18px;
+                            color: rgba(255, 255, 255, 0.7);
+                            text-align: right;
                         }
-                        
-                        display: flex;
-                        flex-direction: column;
-                        align-items: end;
-                        gap: 20px;
                     }
                 }
             }
+        }
+    }
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+@media (max-width: 1024px) {
+    section .container .section_one {
+        .top {
+            width: 80%;
+            padding-left: 40px;
+        }
+        .left-righ-wrapper {
+            padding: 0 40px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    section .container .section_one {
+        .top {
+            width: 100%;
+            padding: 0 20px;
+            text-align: center;
+            align-items: center;
+
+            h1 { font-size: 32px; }
+        }
+
+        .left-righ-wrapper {
+            flex-direction: column; // Ustun holatiga o'tadi
+            align-items: center;
+            padding: 0 20px;
+
+            .left, .right {
+                width: 100%;
+                align-items: center;
+            }
+
+            .right ul {
+                align-items: center; // Ro'yxat o'rtaga olinadi
+                
+                h1 { justify-content: center; }
+                li { text-align: center; }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    section .container .section_one {
+        .top h1 { font-size: 26px; }
+        
+        .left span {
+            flex-direction: column; // Romb va matn ustma-ust
+            gap: 15px;
+            
+            .p { font-size: 18px; text-align: center; }
         }
     }
 }
